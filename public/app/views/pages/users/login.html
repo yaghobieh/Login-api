@@ -1,0 +1,48 @@
+<div class="page-header">
+        <h1>User login</h1>
+    </div>
+    
+    
+    <form ng-submit="main.login(loginData)">
+        <!-- username -->
+        <label>Username</label>
+        <input type="text" class="form-control" name="username" placeholder="Your username" ng-model="main.loginData.username">
+        <br>
+        <!-- password -->
+        <label>Password adress</label>
+        <input type="password" class="form-control" name="password" placeholder="Password" ng-model="main.loginData.password">
+    
+        <br>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="button" class="btn btn-success" ng-click="main.facebook();">Facebook</button>
+        <button type="button" class="btn btn-warning" ng-click="main.twitter();">Twitter</button>
+        <button type="button" class="btn btn-info" ng-click="main.google();">Google</button>
+    </form>
+    
+    <br>
+    
+    <div class="jumbotron text-center" ng-show="main.loading">
+        <div class="glyphicon glyphicon-repeat spinner dizzy-gillespie"></div>
+    </div>
+    
+    
+    <br>
+    <!-- Normal login exec -->
+    <div class="row alert-m">
+        <div class="{{main.alertClass}}">{{main.msgAlert}}</div>
+    </div>
+    
+    <!-- Facebook Error exec -->
+    <div class="row alert-m">
+       <div class="{{facebook.alertClass}}">{{facebook.msgAlert}}</div>
+    </div>
+
+    <!-- Twitter Error exec -->
+    <div class="row alert-m">
+        <div class="{{twitter.alertClass}}">{{twitter.msgAlert}}</div>
+    </div>
+
+    <!-- Google Error exec -->
+    <div class="row alert-m">
+        <div class="{{google.alertClass}}">{{google.msgAlert}}</div>
+    </div>
